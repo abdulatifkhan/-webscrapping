@@ -19,5 +19,5 @@ with open("vocabulary.csv", "w", encoding="utf-8", newline="") as f:
     for tag in tags:
         content = tag.text.strip().replace("‘", "'").replace(
             "’", "'").replace("–", "-").replace("“", '"').replace("”", '"')
-        info = [source_url, access_datetime, content, [word for word in content.split().lower()]]
+        info = [source_url, access_datetime, content, content.split()]
         thewriter.writerow(info)
